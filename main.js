@@ -36,6 +36,8 @@ var firstString = "";
 var secondNum = [];
 var operator;
 let status = false;
+let output = document.getElementById('output');
+
 
 while( status == false )
 {
@@ -50,19 +52,34 @@ while( status == false )
     {
       buttonId.addEventListener('click', function captureNumber()
       {
+
         firstString = firstString + buttonId.id;
         console.log(firstString);
+        output.textContent = firstString;
+
       });
-    }else if (buttonId.id === "=" || buttonId.id === "clear"){
+    }
+    else if (buttonId.id === "=")
+    {
       buttonId.addEventListener('click', function doOperation()
       {
           let a = eval(firstString);
           console.log(a);
           console.log("you pressed " + buttonId.id);
           firstString = "";
+          output.textContent = a;
       }
     );
-    }
+  }
+  else if (buttonId.id === "clear")
+  {
+      buttonId.addEventListener('click', function clearFunction()
+      {
+        firstString = "";
+        output.textContent = firstString;
+      }
+    );
+  }
 
   }
 
@@ -70,7 +87,6 @@ while( status == false )
   status = true;
 }
 
-console.log("Youre done");
 
 
 

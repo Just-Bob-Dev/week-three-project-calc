@@ -17,6 +17,9 @@ body {
   flex-basis: 75%;
   width: 100%;
   background-color: #7DDFE8;
+  color: white;
+  font-size: 3em;
+  text-align: right;
 
 }
 
@@ -46,4 +49,9 @@ body {
 .operator-button button:hover {
   background-color: #0B1942;
   color: white;
+}
+
+output {
+  padding: 0;
+  margin: 0;
 }
