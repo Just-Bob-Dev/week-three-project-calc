@@ -15,7 +15,7 @@ function calc(firstNumber, secondNumber, operator){
 }
 
 
-function arrayConCatinator(array){
+function arrayConcatinator(array){
   let num = "";
   for(i = 0; i < array.length; i++){
       num = num + array[i];
@@ -25,44 +25,141 @@ function arrayConCatinator(array){
   return num;
 }
 
+function makeOperator(id){
+
+}
 
 
 var buttonArray = document.querySelectorAll("button");
 var firstNumberArray = [];
-var firstNum = [];
+var firstString = "";
 var secondNum = [];
 var operator;
+let status = false;
 
-for(i = 0; i < buttonArray.length; i++){
-  let buttonId = document.getElementById(buttonArray[i].id);
+while( status == false )
+{
+  for(i = 0; i < buttonArray.length; i++)
+  {
+    let buttonId = document.getElementById(buttonArray[i].id);
+    let buttonStatus = document.getElementById(buttonArray[i]);
 
-  console.log(buttonId);
+    console.log(buttonId);
 
-  if(buttonId.id === "0" || buttonId.id === "." || buttonId.id === "1" || buttonId.id === "2" || buttonId.id === "3" || buttonId.id === "4" || buttonId.id === "5" || buttonId.id === "6" || buttonId.id === "7" || buttonId.id === "8" || buttonId.id === "9"){
-    buttonId.addEventListener('click', function storePrint(){
-      let output = document.getElementById('output');
+    if(buttonId.id === "0" || buttonId.id === "." || buttonId.id === "1" || buttonId.id === "2" || buttonId.id === "3" || buttonId.id === "4" || buttonId.id === "5" || buttonId.id === "6" || buttonId.id === "7" || buttonId.id === "8" || buttonId.id === "9" || buttonId.id === "*" || buttonId.id === "+" || buttonId.id === "-" || buttonId.id === "/")
+    {
+      buttonId.addEventListener('click', function captureNumber()
+      {
+        firstString = firstString + buttonId.id;
+        console.log(firstString);
+      });
+    }else if (buttonId.id === "=" || buttonId.id === "clear"){
+      buttonId.addEventListener('click', function doOperation()
+      {
+          let a = eval(firstString);
+          console.log(a);
+          console.log("you pressed " + buttonId.id);
+          firstString = "";
+      }
+    );
+    }
 
-      firstNumberArray.push(buttonId.id);
-
-      console.log(firstNumberArray);
-    });
-
-  }else if(buttonId.id === "+"  || buttonId.id === "-"  || buttonId.id === "*"  || buttonId.id === "/"){
-      operator = buttonId.id;
-
-      firstNum = firstNumberArray;
-
-      firstNumberArray = [];
-
-      console.log("First Number: " + firstNum);
-
-  }else if(buttonId.id === "="){
-    secondNum = firstNumberArray;
-    console.log("Second Number: " +secondNum);
   }
 
-
+  console.log("youve made it out.");
+  status = true;
 }
+
+console.log("Youre done");
+
+
+
+// for(i = 0; i < buttonArray.length; i++)
+// {
+//   let buttonId = document.getElementById(buttonArray[i].id);
+//   let buttonStatus = document.getElementById(buttonArray[i]);
+//
+//   console.log(buttonId);
+//
+//   if(buttonId.id === "0" || buttonId.id === "." || buttonId.id === "1" || buttonId.id === "2" || buttonId.id === "3" || buttonId.id === "4" || buttonId.id === "5" || buttonId.id === "6" || buttonId.id === "7" || buttonId.id === "8" || buttonId.id === "9")
+//   {
+//     buttonId.addEventListener('click', function captureNumber()
+//     {
+//       firstNumberArray.push(buttonId.id);
+//       console.log(firstNumberArray);
+//     });
+//   }
+//   else if(buttonId.id === "=" || buttonId.id ==="*" || buttonId.id ==="-" || buttonId.id ==="/" || buttonId.id ==="+")
+//   {
+//     buttonId.addEventListener('click', changeState, true);
+//     console.log("Hey you clicked = " + buttonId);
+//   }
+//
+// }
+
+
+// let button0 = document.getElementById('0');
+// turnToButton(button0);
+//
+// let buttonPoint = document.getElementById('.');
+// turnToButton(buttonPoint);
+//
+// let button1 = document.getElementById('1');
+// turnToButton(button1);
+//
+// let button2 = document.getElementById('2');
+// turnToButton(button2);
+//
+// let button3 = document.getElementById('3');
+// turnToButton(button3);
+//
+// let button4 = document.getElementById('4');
+// turnToButton(button4);
+//
+// let button5 = document.getElementById('5');
+// turnToButton(button5);
+//
+// let button6 = document.getElementById('6');
+// turnToButton(button6);
+//
+// let button7 = document.getElementById('7');
+// turnToButton(button7);
+//
+// let button8 = document.getElementById('8');
+// turnToButton(button8);
+//
+// let button9 = document.getElementById('9');
+// turnToButton(button9);
+//
+// function turnToButton(button){
+//       buttonId = button;
+//       buttonId.addEventListener('click', function storeNumber(){
+//       let number = buttonId.id;
+//       console.log(firstNumberArray);
+//       return firstNumberArray.push(number);
+//
+//     });
+//   }
+//
+// // console.log(firstNumberArray);
+// //   }else if(buttonId.id === "+"  || buttonId.id === "-"  || buttonId.id === "*"  || buttonId.id === "/"){
+// //     buttonId.id.addEventListener('click', function storeOperator(){
+// //       operator = buttonId.id;
+// //
+// //       firstNum = firstNumberArray;
+//
+//       firstNumberArray = [];
+//
+//       console.log("First Number: " + firstNum);
+//     });
+//   }else if(buttonId.id === "="){
+//     buttonId.id.addEventListener('click', function doCalculation(){
+//     secondNum = firstNumberArray;
+//     console.log("Second Number: " +secondNum);
+//   });
+// }
+//
+// }
 
 
 
