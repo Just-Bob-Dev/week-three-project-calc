@@ -45,7 +45,7 @@ while( status == false )
 
     console.log(buttonId);
 
-    if(buttonId.id === "0" || buttonId.id === "." || buttonId.id === "1" || buttonId.id === "2" || buttonId.id === "3" || buttonId.id === "4" || buttonId.id === "5" || buttonId.id === "6" || buttonId.id === "7" || buttonId.id === "8" || buttonId.id === "9" || buttonId.id === "*" || buttonId.id === "+" || buttonId.id === "-" || buttonId.id === "/")
+    if(buttonId.id === "0" || buttonId.id === "." || buttonId.id === "1" || buttonId.id === "2" || buttonId.id === "3" || buttonId.id === "4" || buttonId.id === "5" || buttonId.id === "6" || buttonId.id === "7" || buttonId.id === "8" || buttonId.id === "9" || buttonId.id === "*" || buttonId.id === "+" || buttonId.id === "-" || buttonId.id === "/" ||buttonId.id === "(" || buttonId.id === ")" || buttonId.id === "%")
     {
       buttonId.addEventListener('click', function captureNumber()
       {
@@ -53,8 +53,19 @@ while( status == false )
         firstString = firstString + buttonId.id;
         console.log(firstString);
         output.textContent = firstString;
-
       });
+    }
+    else if (buttonId.id === "sqrt()")
+    {
+      buttonId.addEventListener('click',function calculateSquareRoot()
+      {
+        let squareRoot = Math.sqrt(firstString);
+        firstString = "";
+        firstString = firstString + squareRoot;
+        let outputText = "" + squareRoot;
+        output.textContent = firstString;
+      }
+    );
     }
     else if (buttonId.id === "=")
     {
