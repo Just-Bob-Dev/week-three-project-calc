@@ -8,8 +8,8 @@ body {
   display: flex;
   justify-content: space-around;
 
-  width: 60vw;
-  height: 80vw;
+  width: 45vw;
+  height: 60vw;
   flex-flow: row wrap;
 }
 
@@ -18,8 +18,11 @@ body {
   width: 100%;
   background-color: #7DDFE8;
   color: white;
-  font-size: 3em;
+  font-size: 4em;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
 }
 

@@ -1,40 +1,37 @@
-function calc(firstNumber, secondNumber, operator){
-  let numOne = firstNumber;
-  let numTwo = secondNumber;
-  let product = 0;
-  if(operator === "*"){
-    product = numOne * numTwo;
-  }else if (operator === "/"){
-    product = numOne / numTwo;
-  }else if (operator === "+"){
-    product = numOne + numTwo;
-  }else if (operator === "-"){
-    product = numOne - numTwo;
-  }
-  return product;
-}
-
-
-function arrayConcatinator(array){
-  let num = "";
-  for(i = 0; i < array.length; i++){
-      num = num + array[i];
-  }
-  num = parseInt(num);
-  console.log(num);
-  return num;
-}
-
-function makeOperator(id){
-
-}
+// function calc(firstNumber, secondNumber, operator){
+//   let numOne = firstNumber;
+//   let numTwo = secondNumber;
+//   let product = 0;
+//   if(operator === "*"){
+//     product = numOne * numTwo;
+//   }else if (operator === "/"){
+//     product = numOne / numTwo;
+//   }else if (operator === "+"){
+//     product = numOne + numTwo;
+//   }else if (operator === "-"){
+//     product = numOne - numTwo;
+//   }
+//   return product;
+// }
+//
+//
+// function arrayConcatinator(array){
+//   let num = "";
+//   for(i = 0; i < array.length; i++){
+//       num = num + array[i];
+//   }
+//   num = parseInt(num);
+//   console.log(num);
+//   return num;
+// }
+//
+// function makeOperator(id){
+//
+// }
 
 
 var buttonArray = document.querySelectorAll("button");
-var firstNumberArray = [];
 var firstString = "";
-var secondNum = [];
-var operator;
 let status = false;
 let output = document.getElementById('output');
 
