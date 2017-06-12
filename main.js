@@ -57,6 +57,7 @@ while( status == false )
     }
     else if (buttonId.id === "sqrt()")
     {
+      let placeHolderString = firstString;
       buttonId.addEventListener('click',function calculateSquareRoot()
       {
         let squareRoot = Math.sqrt(firstString);
