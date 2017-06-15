@@ -28,10 +28,35 @@
 // function makeOperator(id){
 //
 // }
+function squareRootThatNum(num)
+{
+  let tempNum = num;
+  let input = "";
+  let paraStatus = false;
+  while(paraStatus === false)
+  {
+    if(buttonId.id === ")")
+    {
+      paraStatus = true;
+    }
+    else
+    {
+      input += buttonId.id;
+    }
+  }
+  let square = "" + Math.squareRoot(parseInt(input));
+  num = num + square;
+  return num;
+
+
+}
+
+
 
 
 var buttonArray = document.querySelectorAll("button");
 var firstString = "";
+var secondString = "";
 let status = false;
 let output = document.getElementById('output');
 
@@ -51,6 +76,8 @@ while( status == false )
       {
 
         firstString = firstString + buttonId.id;
+        secondString = secondString + buttonId.id;
+
         console.log(firstString);
         output.textContent = firstString;
       });
@@ -60,10 +87,8 @@ while( status == false )
       let placeHolderString = firstString;
       buttonId.addEventListener('click',function calculateSquareRoot()
       {
-        let squareRoot = Math.sqrt(firstString);
-        firstString = "";
-        firstString = firstString + squareRoot;
-        let outputText = "" + squareRoot;
+        firstString += "\u221A(";
+        secondString += "Math.sqrt("
         output.textContent = firstString;
       }
     );
@@ -72,10 +97,13 @@ while( status == false )
     {
       buttonId.addEventListener('click', function doOperation()
       {
-          let a = eval(firstString);
+          let a = eval(secondString);
+          console.log(firstString);
+          console.log(secondString);
           console.log(a);
           console.log("you pressed " + buttonId.id);
           firstString = "";
+          secondString ="";
           output.textContent = a;
       }
     );
@@ -85,6 +113,7 @@ while( status == false )
       buttonId.addEventListener('click', function clearFunction()
       {
         firstString = "";
+        secondString = "";
         output.textContent = firstString;
       }
     );
