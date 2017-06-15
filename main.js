@@ -28,6 +28,7 @@
 // function makeOperator(id){
 //
 // }
+//JavaScript
 function squareRootThatNum(num)
 {
   let tempNum = num;
